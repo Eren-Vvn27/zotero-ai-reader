@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!-- AI 论文助手 (Zotero Ask AI) - chat window shell.
+     The UI itself is built in askext.js so it can share helpers with the reader
+     popup and stay independent of XUL layout quirks. -->
+<!DOCTYPE window>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://zotero/skin/zotero.css" type="text/css"?>
+<?xml-stylesheet href="chrome://askai/content/styles/askai.css" type="text/css"?>
+
+<window id="askai-window"
+	windowtype="askai:window"
+	title="AI 论文助手"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	persist="screenX screenY width height"
+	width="620"
+	height="840"
+	onload="AskAIApp.init()">
+
+	<script src="chrome://zotero/content/include.js"></script>
+	<script src="chrome://askai/content/scripts/core.js"></script>
+	<script src="chrome://askai/content/scripts/askext.js"></script>
+
+	<html:div xmlns:html="http://www.w3.org/1999/xhtml" id="askai-root" class="askai-root"></html:div>
+</window>

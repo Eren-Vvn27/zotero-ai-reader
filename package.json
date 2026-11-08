@@ -1,0 +1,10 @@
+{
+  "name": "zotero-ai-reader",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Zotero plugin: select paper text, ask AI with full-paper context",
+  "scripts": {
+    "test": "node test/core.test.mjs",
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File build/build.ps1"
+  }
+}

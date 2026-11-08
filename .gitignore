@@ -1,0 +1,10 @@
+# Local scratch / temp files
+.scratch/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/

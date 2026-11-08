@@ -1,0 +1,124 @@
+<vbox
+	id="zotero-prefpane-askai"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	flex="1">
+
+	<groupbox>
+		<label><html:h2>模型服务</html:h2></label>
+		<grid>
+			<columns>
+				<column/>
+				<column flex="1"/>
+			</columns>
+			<rows>
+				<row align="center">
+					<label value="接口地址" control="askai-pref-endpoint"/>
+					<textbox id="askai-pref-endpoint" preference="extensions.zotero.askai.endpoint"
+						placeholder="https://api.deepseek.com 或完整的 /chat/completions 地址"/>
+				</row>
+				<row align="center">
+					<label value="API Key" control="askai-pref-apikey"/>
+					<textbox id="askai-pref-apikey" type="password" preference="extensions.zotero.askai.apiKey"
+						placeholder="sk-…（本地服务可留空）"/>
+				</row>
+				<row align="center">
+					<label value="模型名称" control="askai-pref-model"/>
+					<textbox id="askai-pref-model" preference="extensions.zotero.askai.model"
+						placeholder="例如 deepseek-flash、deepseek-v4-pro、gpt-4o-mini、qwen-plus"/>
+				</row>
+				<row align="center">
+					<label value="思考模式" control="askai-pref-thinking"/>
+					<menulist id="askai-pref-thinking" preference="extensions.zotero.askai.thinking">
+						<menupopup>
+							<menuitem label="跟随服务商默认" value="auto"/>
+							<menuitem label="开启（先推理再回答）" value="enabled"/>
+							<menuitem label="关闭（直接回答，更快更省）" value="disabled"/>
+						</menupopup>
+					</menulist>
+				</row>
+				<row align="center">
+					<label value="思考强度" control="askai-pref-effort"/>
+					<menulist id="askai-pref-effort" preference="extensions.zotero.askai.reasoningEffort">
+						<menupopup>
+							<menuitem label="低" value="low"/>
+							<menuitem label="高（默认）" value="high"/>
+							<menuitem label="最高" value="max"/>
+						</menupopup>
+					</menulist>
+				</row>
+				<row align="center">
+					<label value="温度（0–2）" control="askai-pref-temperature"/>
+					<textbox id="askai-pref-temperature" preference="extensions.zotero.askai.temperature"/>
+				</row>
+				<row align="center">
+					<label value="最大回复 tokens" control="askai-pref-maxtokens"/>
+					<textbox id="askai-pref-maxtokens" preference="extensions.zotero.askai.maxTokens"/>
+				</row>
+			</rows>
+		</grid>
+	</groupbox>
+
+	<groupbox>
+		<label><html:h2>论文上下文</html:h2></label>
+		<grid>
+			<columns>
+				<column/>
+				<column flex="1"/>
+			</columns>
+			<rows>
+				<row align="center">
+					<label value="最大上下文字符数" control="askai-pref-maxcontext"/>
+					<textbox id="askai-pref-maxcontext" preference="extensions.zotero.askai.maxContextChars"/>
+				</row>
+			</rows>
+		</grid>
+		<description>论文总字数不超过该值时发送全文；超过时自动改为检索最相关段落。</description>
+	</groupbox>
+
+	<groupbox>
+		<label><html:h2>交互行为</html:h2></label>
+		<checkbox id="askai-pref-stream" label="流式输出（边生成边显示）" native="true"
+			preference="extensions.zotero.askai.stream"/>
+		<checkbox id="askai-pref-autosend" label="选中内容后自动提问" native="true"
+			preference="extensions.zotero.askai.autoSend"/>
+		<grid>
+			<columns>
+				<column/>
+				<column flex="1"/>
+			</columns>
+			<rows>
+				<row align="center">
+					<label value="回答语言" control="askai-pref-language"/>
+					<menulist id="askai-pref-language" preference="extensions.zotero.askai.language">
+						<menupopup>
+							<menuitem label="跟随提问语言" value="auto"/>
+							<menuitem label="简体中文" value="zh"/>
+							<menuitem label="English" value="en"/>
+						</menupopup>
+					</menulist>
+				</row>
+			</rows>
+		</grid>
+	</groupbox>
+
+	<groupbox>
+		<label><html:h2>提示词与高级</html:h2></label>
+		<label value="选中内容后的默认问题" control="askai-pref-defaultquestion"/>
+		<textbox id="askai-pref-defaultquestion" multiline="true" rows="3"
+			preference="extensions.zotero.askai.defaultQuestion"/>
+		<label value="系统提示词（留空使用内置学术阅读提示词）" control="askai-pref-systemprompt"/>
+		<textbox id="askai-pref-systemprompt" multiline="true" rows="4"
+			preference="extensions.zotero.askai.systemPrompt"/>
+		<label value="额外请求头（JSON，用于 Azure 等自定义鉴权）" control="askai-pref-extraheaders"/>
+		<textbox id="askai-pref-extraheaders" multiline="true" rows="2"
+			preference="extensions.zotero.askai.extraHeaders"/>
+		<checkbox id="askai-pref-debug" label="调试日志" native="true"
+			preference="extensions.zotero.askai.debug"/>
+	</groupbox>
+
+	<hbox align="center">
+		<button label="打开 AI 对话窗口" oncommand="try { Zotero.AskAI.open({kind:'blank'}); } catch(e) { Zotero.logError(e); }"/>
+		<description class="askai-pref-note">API Key 仅保存在本机，只发送到你填写的接口地址；连接测试与更多选项在对话窗口内。</description>
+	</hbox>
+</vbox>
