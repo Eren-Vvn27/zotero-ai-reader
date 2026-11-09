@@ -1,4 +1,4 @@
-﻿/* Runs the real AskAI UI against mocks and records assertions for headless runs. */
+/* Runs the real AskAI UI against mocks and records assertions for headless runs. */
 
 (async function main() {
 	const state = window.__mock;
@@ -97,7 +97,7 @@
 		check("assistant: markdown table", !!document.querySelector(".askai-md table"));
 		check("assistant: context chip", /全文/.test(text(".askai-ctx")), text(".askai-ctx"));
 		check("assistant: actions visible", document.querySelectorAll(".askai-actions:not(.hidden) .askai-action").length === 4, document.querySelectorAll(".askai-actions .askai-action").length);
-		check("watermark: header WN mark", !!document.querySelector(".askai-header .askai-brand-mark"));
+		check("watermark: header brand mark", !!document.querySelector(".askai-header .askai-brand-mark"));
 		check("usage: displayed with cache hit", (document.querySelector(".askai-usage") || {}).textContent.indexOf("缓存命中") !== -1,
 			(document.querySelector(".askai-usage") || {}).textContent);
 

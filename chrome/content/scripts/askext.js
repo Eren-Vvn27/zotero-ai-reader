@@ -261,7 +261,7 @@ var AskAIApp = {
 				h("div", { class: "askai-brand-text" }, [
 					h("div", { class: "askai-brand-title" }, [
 						h("span", { text: "AI 论文助手" }),
-						h("span", { class: "askai-brand-mark", text: "WN", title: "WN · AI 生成内容标识" })
+						h("span", { class: "askai-brand-mark", text: "Sonny Boy", title: "Sonny Boy" })
 					]),
 					els.brandSub = h("div", { class: "askai-brand-sub", text: "选中论文内容，一键基于全文提问" })
 				])

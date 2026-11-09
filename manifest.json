@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
   "name": "AI 论文助手 (Zotero Ask AI)",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "在 Zotero 中选中论文内容，一键让 AI 基于论文全文回答问题。",
-  "author": "WN",
+  "author": "Sonny Boy",
   "icons": {
     "48": "chrome/content/icons/icon-48.png",
     "96": "chrome/content/icons/icon-96.png"

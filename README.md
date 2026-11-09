@@ -37,14 +37,14 @@ AI 会先读取整篇论文的正文，再回答你针对选中内容（或整�
 
 ### 方式一：直接安装（推荐）
 
-1. 下载 `dist/zotero-ai-reader-0.2.3.xpi`。
+1. 下载 `dist/zotero-ai-reader-0.2.4.xpi`。
 2. 打开 Zotero → `工具 → 插件 → 右上角齿轮 → Install Plugin From File…`，选择该 `.xpi`。
 3. 重启 Zotero。
 
 ### 方式二：从源码构建
 
 ```powershell
-# 生成 dist/zotero-ai-reader-0.1.0.xpi
+# 生成 dist/zotero-ai-reader-0.2.4.xpi
 powershell -NoProfile -ExecutionPolicy Bypass -File build/build.ps1
 ```
 
@@ -173,3 +173,10 @@ zotero-ai-reader/
 - 上下文检索增强（混合 BM25 + 句子向量）。
 - 会话导出为 Markdown/笔记。
 - 多窗口、多论文并行会话。
+
+---
+
+## 许可证
+
+MIT © Sonny Boy
+

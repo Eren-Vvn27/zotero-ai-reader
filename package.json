@@ -1,7 +1,8 @@
 {
   "name": "zotero-ai-reader",
-  "version": "0.1.0",
+  "version": "0.2.4",
   "private": true,
+  "author": "Sonny Boy",
   "description": "Zotero plugin: select paper text, ask AI with full-paper context",
   "scripts": {
     "test": "node test/core.test.mjs",
