@@ -37,7 +37,7 @@ AI 会先读取整篇论文的正文，再回答你针对选中内容（或整�
 
 ### 方式一：直接安装（推荐）
 
-1. 下载 `dist/zotero-ai-reader-0.1.0.xpi`。
+1. 下载 `dist/zotero-ai-reader-0.2.3.xpi`。
 2. 打开 Zotero → `工具 → 插件 → 右上角齿轮 → Install Plugin From File…`，选择该 `.xpi`。
 3. 重启 Zotero。
 
